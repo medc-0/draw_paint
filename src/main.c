@@ -9,7 +9,7 @@ int main(int argc, char *argv[]) {
 
     SDL_Surface *surface = SDL_GetWindowSurface(window);
     SDL_FillRect(surface, NULL, 0xFFFFFFFF);
-    
+
     bool done = false;
     bool draw = false;
     int x = 0, y = 0;
@@ -60,7 +60,7 @@ int main(int argc, char *argv[]) {
                         SDL_UpdateWindowSurface(window);
                     }
                     break;
-                
+
                 case SDL_WINDOWEVENT:
                     if (event.window.event == SDL_WINDOWEVENT_RESIZED) {
                         surface = SDL_GetWindowSurface(window);
@@ -69,7 +69,8 @@ int main(int argc, char *argv[]) {
             }
         }
 
-        if (draw) {
+        if (draw)
+        {
             draw_circle(surface, x, y, brush_size, current_color);
             SDL_UpdateWindowSurface(window);
         }
